@@ -1,5 +1,7 @@
 
+import modal.bean.Produto;
 import modal.bean.ProdutoTableModel;
+import modal.dao.ProdutoDAO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -72,6 +74,11 @@ public class Cadastro_de_produto extends javax.swing.JFrame {
         label3.setText("Valor");
 
         button1.setLabel("Cadastra Produto");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         button2.setLabel("Excluir");
 
@@ -138,6 +145,17 @@ public class Cadastro_de_produto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        Produto p = new Produto();
+        ProdutoDAO dao = new ProdutoDAO();
+        p.setDescricao(descri_entrada.getText());
+        p.setQtd(Integer.parseInt(quantidade_entrada.getText()));
+        p.setVlr(Double.parseDouble(valor_entrada.getText()));
+        dao.Inserir(p);
+        
+    }//GEN-LAST:event_button1ActionPerformed
 
     /**
      * @param args the command line arguments
