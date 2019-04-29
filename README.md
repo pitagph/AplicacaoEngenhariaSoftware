@@ -1,2 +1,2 @@
 # AplicacaoEngenhariaSoftware
-Aplicação para 3 nota do quinto periodo
+Aplicação para terceira nota do quinto periodo
